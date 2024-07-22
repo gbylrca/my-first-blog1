@@ -1,30 +1,127 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-        
-        {% for post in posts %}
-            <div>
-                <p> publicado: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>{{ post.text|linebreaksbr }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            cursor: pointer;
+        }
+        .product-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Catálogo de Productos de Carnitas Reu</h1>
+        <div class="row">
+            <!-- Product List -->
+            <div class="col-md-4">
+                <div class="list-group" id="product-list">
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product1">
+                        Coca Cola - Q10.50
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product2">
+                        Tiky - Q1.50
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product3">
+                        Pollo Asado - Q5.75
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product4">
+                        Agua Mineral - Q1.00
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product5">
+                        Carne de Res - Q7.00
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product6">
+                        Jugo de Naranja - Q2.00
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product7">
+                        Pescado - Q6.50
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product8">
+                        Cerdo - Q4.50
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product9">
+                        Café - Q1.80
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action product-card" data-target="#product10">
+                        Té Verde - Q1.50
+                    </a>
+                </div>
             </div>
-        {% endfor %}
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <!-- Product Details -->
+            <div class="col-md-8">
+                <div id="product-details">
+                    <div id="product1" class="product-details">
+                        <h2>Coca Cola</h2>
+                        <img src="https://api.freelogodesign.org/assets/blog/thumb/f4dae7732213491da3952f853c48f6dc_1176x840.jpg" alt="Coca Cola" class="img-fluid">
+                        <p>Refresco carbonatado popular en todo el mundo. Precio: Q10.50</p>
+                    </div>
+                    <div id="product2" class="product-details">
+                        <h2>Tiky</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRme4ftXF1fJ4yz9yqc4kMcQK33Po9KA6vMUl__HPtegMZNRMJV1pS7uN-I1hQoGXiV-TI&usqp=CAU" alt="Tiky" class="img-fluid">
+                        <p>Bebida refrescante. Precio: Q1.50</p>
+                    </div>
+                    <div id="product3" class="product-details">
+                        <h2>Pollo Asado</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaiapCXCINt1LDerb0o5A23EcUjT8GnRU6rw&s" alt="Pollo Asado" class="img-fluid">
+                        <p>Delicioso pollo asado. Precio: Q5.75</p>
+                    </div>
+                    <div id="product4" class="product-details">
+                        <h2>Agua Mineral</h2>
+                        <img src="https://cropafresh.com/wp-content/uploads/2024/03/312339_1.jpg" alt="Agua Mineral" class="img-fluid">
+                        <p>Agua mineral pura. Precio: Q1.00</p>
+                    </div>
+                    <div id="product5" class="product-details">
+                        <h2>Carne de Res</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpo5ZS4tuvJK4Ok_TmOvQUdlk8r-hXiNc_FQ&s" alt="Carne de Res" class="img-fluid">
+                        <p>Carne de res fresca. Precio: Q7.00</p>
+                    </div>
+                    <div id="product6" class="product-details">
+                        <h2>Jugo de Naranja</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSs0izBVODzqPucMrISv-KSlG7UbnT4Rh3g&s" alt="Jugo de Naranja" class="img-fluid">
+                        <p>Jugo de naranja natural. Precio: Q2.00</p>
+                    </div>
+                    <div id="product7" class="product-details">
+                        <h2>Pescado</h2>
+                        <img src="https://www.superamara.com/imagenes/contenidos/pescados-blancos-azules-semigrasos.jpg" alt="Pescado" class="img-fluid">
+                        <p>Pescado fresco. Precio: Q6.50</p>
+                    </div>
+                    <div id="product8" class="product-details">
+                        <h2>Cerdo</h2>
+                        <img src="https://lh6.googleusercontent.com/proxy/PDNQNHJu4splB9mrU9S24XYKC3aaM-PmGdXXnbX2IS54vrmRK-H4Ms6jvtgWen9GvoqUHw85pp5RGIWAfOMf38cQnK9TjrvesgQbIMnnsXkmH7s0_oTxouqCOTBisUhumGjIqSfM-LFjXQ" alt="Cerdo" class="img-fluid">
+                        <p>Carne de cerdo. Precio: Q4.50</p>
+                    </div>
+                    <div id="product9" class="product-details">
+                        <h2>Café</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUyQ_dwQJtCltsw4aU2RCOqw8lLavIq-oLxA&s" alt="Café" class="img-fluid">
+                        <p>Café recién molido. Precio: Q1.80</p>
+                    </div>
+                    <div id="product10" class="product-details">
+                        <h2>Té Verde</h2>
+                        <img src="https://static.tuasaude.com/media/article/yp/dt/beneficios-del-te-verde_17350_l.jpg" alt="Té Verde" class="img-fluid">
+                        <p>Té verde natural. Precio: Q1.50</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.product-card').on('click', function(e){
+                e.preventDefault();
+                $('.product-details').hide();
+                $($(this).data('target')).show();
+            });
+        });
+    </script>
+</body>
 </html>
